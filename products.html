@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Products - Fanta</title>
+    <style>
+        .products-section {
+            padding: 15vh 10vw;
+            min-height: 100vh;
+            background: linear-gradient(150deg, rgb(255, 166, 0), rgb(255, 94, 0));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 5vw;
+            width: 100%;
+            margin-top: 5vh;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h2 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-buy {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="background: rgba(0,0,0,0.2);">
+        <a href="index.html"><img src="Assets/logo.png" alt="Fanta Logo" style="height: 50px;"></a>
+        <div class="cntr-nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Active Products</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!-- <i class="ri-menu-fill"></i> -->
+    </nav>
+
+    <div class="products-section">
+        <h1 style="color: white; font-size: 4vw; margin-bottom: 2vh;">Our Products</h1>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="Assets/fanta.png" alt="Fanta">
+                <h2>Fanta Orange</h2>
+                <p>$1.99</p>
+                <a href="checkout.html?product=fanta" class="btn-buy">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="Assets/cocacola.png" alt="CocaCola">
+                <h2>Coca Cola</h2>
+                <p>$1.99</p>
+                <a href="checkout.html?product=cocacola" class="btn-buy">Buy Now</a>
+            </div>
+            <div class="product-card">
+                <img src="Assets/pepsi.png" alt="Pepsi">
+                <h2>Pepsi</h2>
+                <p>$1.99</p>
+                <a href="checkout.html?product=pepsi" class="btn-buy">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-logo">
+            <img src="Assets/logo.png" alt="Fanta Logo">
+            <p>Experience the refreshing taste of Fanta. Bursting with orange flavor and energy to keep you going.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-instagram-fill"></i>
+                <i class="ri-twitter-x-fill"></i>
+                <i class="ri-youtube-fill"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Fanta Energy. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

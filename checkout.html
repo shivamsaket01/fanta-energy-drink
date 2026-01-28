@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Checkout - Fanta</title>
+    <style>
+        .checkout-section {
+            padding: 15vh 10vw;
+            min-height: 100vh;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+        }
+
+        .checkout-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            gap: 5vh;
+            flex-wrap: wrap;
+        }
+
+        .checkout-form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .order-summary {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            min-width: 250px;
+            height: fit-content;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn-pay {
+            width: 100%;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .btn-pay:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="background: orangered;">
+        <a href="index.html"><img src="Assets/logo.png" alt="Fanta Logo" style="height: 50px;"></a>
+        <div class="cntr-nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!-- <i class="ri-menu-fill"></i> -->
+    </nav>
+
+    <div class="checkout-section">
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h2>Shipping Details</h2>
+                <form
+                    onsubmit="event.preventDefault(); alert('Order Placed Successfully! Thank you for buying Fanta.'); window.location.href='index.html';">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>City & Zip Code</label>
+                        <input type="text" required>
+                    </div>
+                    <h2>Payment Info</h2>
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
+                    </div>
+                    <div class="form-group" style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="MM/YY" required style="flex:1">
+                        <input type="text" placeholder="CVC" required style="flex:1">
+                    </div>
+                    <button type="submit" class="btn-pay">Complete Purchase</button>
+                </form>
+            </div>
+            <div class="order-summary">
+                <h2>Summary</h2>
+                <p id="product-name">Product: <span>Loading...</span></p>
+                <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ddd;">
+                <p>Total: <strong>$1.99</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to get query param
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        if (product) {
+            document.querySelector('#product-name span').textContent = product.toUpperCase();
+        } else {
+            document.querySelector('#product-name span').textContent = 'Fanta Orange';
+        }
+    </script>
+    <footer>
+        <div class="footer-logo">
+            <img src="Assets/logo.png" alt="Fanta Logo">
+            <p>Experience the refreshing taste of Fanta. Bursting with orange flavor and energy to keep you going.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <i class="ri-facebook-fill"></i>
+                <i class="ri-instagram-fill"></i>
+                <i class="ri-twitter-x-fill"></i>
+                <i class="ri-youtube-fill"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Fanta Energy. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
